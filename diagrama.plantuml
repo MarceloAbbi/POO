@@ -1,0 +1,30 @@
+@startuml heranca_associacao
+
+title Diagrama heranca com associacao
+
+class Pessoa{
+    -nome: string
+    -endereco: string 
+    -telefone: integer
+    +construtor(nome, endereco, telefone)
+
+}
+
+class PessoaFisica{
+    -cpf: integer 
+    -rg: integer
+    -estado_civil: string 
+    +construtor(pessoa, cpf, rg, estado_civil)
+    +validar_cpf(cpf)
+    
+}
+
+class PessoaJuridica{
+    -cnpj: integer 
+    -ie: integer
+    -nome_fantasia: string 
+    +construtor(pessoa, rg, nome_fantasia)
+}
+
+Pessoa <|-- PessoaFisica
+Pessoa <|-- PessoaJuridica
